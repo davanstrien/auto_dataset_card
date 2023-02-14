@@ -11,16 +11,19 @@ python -m pip install git+https://github.com/davanstrien/auto_dataset_card.git
 
 ## How to use
 
-This is currently a proof-of-concept but the idea will be that this
-library will allow you to: - pass in a 🤗 `datasets` dataset and get
-back useful information for your dataset card i.e. label frequencies -
-optionally format this information in a nice Markdown format i.e. a
-Markdown table
+This repo currently contains a proof-of-concept, but the idea is that
+this library will allow you to:
+
+- pass in a 🤗 `datasets` dataset and get back helpful information for
+  your dataset card, i.e. label frequencies
+- optionally format this information in a friendly Markdown format,
+  i.e. a Markdown table
 
 ``` python
 from auto_dataset_card.core import generate_label_breakdown_tables, get_label_counts
 from datasets import load_dataset
-ds = load_dataset('imdb',streaming=True)
+
+ds = load_dataset("imdb", streaming=True)
 label_counts = get_label_counts(ds)
 print(label_counts)
 ```
