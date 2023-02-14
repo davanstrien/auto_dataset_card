@@ -5,4 +5,11 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://davanstrien.github.io',
                 'git_url': 'https://github.com/davanstrien/auto_dataset_card',
                 'lib_path': 'auto_dataset_card'},
-  'syms': {'auto_dataset_card.core': {'auto_dataset_card.core.foo': ('core.html#foo', 'auto_dataset_card/core.py')}}}
+  'syms': { 'auto_dataset_card.core': { 'auto_dataset_card.core.generate_label_breakdown_tables': ( 'core.html#generate_label_breakdown_tables',
+                                                                                                    'auto_dataset_card/core.py'),
+                                        'auto_dataset_card.core.get_label_column_names': ( 'core.html#get_label_column_names',
+                                                                                           'auto_dataset_card/core.py'),
+                                        'auto_dataset_card.core.get_label_counts': ( 'core.html#get_label_counts',
+                                                                                     'auto_dataset_card/core.py'),
+                                        'auto_dataset_card.core.yield_label_column': ( 'core.html#yield_label_column',
+                                                                                       'auto_dataset_card/core.py')}}}
