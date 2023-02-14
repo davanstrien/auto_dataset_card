@@ -9,25 +9,30 @@ documentation.
 ## Install
 
 ``` sh
-pip install auto_dataset_card
+python -m pip install git+https://github.com/davanstrien/auto_dataset_card.git
 ```
 
 ## How to use
 
-Fill me in please! Don’t forget code examples:
+writing dataset cards is essential. it is also time-consuming. wouldn’t
+it be nice to generate parts of our dataset card automagically?
 
 ``` python
 from auto_dataset_card.core import generate_label_breakdown_tables, get_label_counts
 from datasets import load_dataset
 ds = load_dataset('imdb',streaming=True)
 label_counts = get_label_counts(ds)
-label_counts
+print(label_counts)
 ```
+
+    {'train': {'neg': 12500, 'pos': 12500}, 'test': {'neg': 12500, 'pos': 12500}, 'unsupervised': {'no label': 50000}}
 
 ``` python
 tables = generate_label_breakdown_tables(label_counts)
-for table in tables:
-    print(table[0])
-    print(table[1])
-    break
+print(tables[0][1])
 ```
+
+    | Label   |   Count | Percentage   |
+    |---------|---------|--------------|
+    | neg     |   12500 | 50.0%        |
+    | pos     |   12500 | 50.0%        |
