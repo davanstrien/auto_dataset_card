@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "auto_dataset_card"
+  site-url: "https://davanstrien.github.io/auto_dataset_card"
+  description: ""
+  repo-branch: main
+  repo-url: "https://github.com/davanstrien/auto_dataset_card"
