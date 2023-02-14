@@ -6,7 +6,7 @@ __all__ = ['get_label_column_names', 'yield_label_column', 'get_label_counts', '
 # %% ../nbs/00_core.ipynb 2
 from datasets import load_dataset
 from datasets import ClassLabel
-from datasets import IterableDataset, Dataset, DatasetDict, IterableDatasetDict
+from datasets import IterableDataset, DatasetDict
 from typing import Dict, Any, List
 from collections import Counter
 from tabulate import tabulate
@@ -46,7 +46,9 @@ def generate_label_breakdown_tables(results):
     tables = []
     for name, split in results.items():
         total = sum(split.values())
-        table_data = [(k, v, f"{round((v/total)*100,2)}%") for k, v in split.items()]
+        table_data = [
+            (k, f"{v:,}", f"{round((v/total)*100,2)}%") for k, v in split.items()
+        ]
         tables.append(
             (
                 name,
