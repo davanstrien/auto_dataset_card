@@ -17,7 +17,17 @@ pip install auto_dataset_card
 Fill me in please! Don’t forget code examples:
 
 ``` python
-1+1
+from auto_dataset_card.core import generate_label_breakdown_tables, get_label_counts
+from datasets import load_dataset
+ds = load_dataset('imdb',streaming=True)
+label_counts = get_label_counts(ds)
+label_counts
 ```
 
-    2
+``` python
+tables = generate_label_breakdown_tables(label_counts)
+for table in tables:
+    print(table[0])
+    print(table[1])
+    break
+```
